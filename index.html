@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space — conversations become shared memory</title>
+  <meta name="description" content="Space turns chats, meetings and calls into memory your team can edit, share and search. Self-hosted, on your own server.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236d4aff'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #fbfaff;
+      --text: #1b1830;
+      --muted: #5f5b75;
+      --line: #e6e2f3;
+      --accent: #6d4aff;
+      --accent-soft: #f0ecff;
+      --card: #ffffff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121019;
+        --text: #eeeaf8;
+        --muted: #a39fb8;
+        --line: #2a2638;
+        --accent: #9b85ff;
+        --accent-soft: #211c33;
+        --card: #1a1724;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 28px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 650; font-size: 18px; }
+    .mark {
+      width: 28px; height: 28px; border-radius: 8px; background: var(--accent);
+      display: grid; place-items: center;
+    }
+    .mark span { width: 12px; height: 12px; border: 3px solid #fff; border-radius: 50%; }
+    .hero { padding: 72px 0 56px; }
+    .eyebrow {
+      display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .02em;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 4px 10px; border-radius: 999px; margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 20px; }
+    .lede { font-size: 20px; color: var(--muted); max-width: 620px; margin: 0 0 32px; }
+    .cta {
+      display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+      font-weight: 600; padding: 12px 20px; border-radius: 10px;
+    }
+    .cta:hover { filter: brightness(1.08); }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px; padding: 24px 0 72px;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 17px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    footer {
+      border-top: 1px solid var(--line); padding: 28px 0 40px;
+      color: var(--muted); font-size: 14px;
+    }
+    footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer a { color: var(--muted); }
+    footer .links a { margin-left: 16px; }
+    footer .links a:first-child { margin-left: 0; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><div class="mark"><span></span></div>Space</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Coming soon to iPhone and the web</div>
+      <h1>Conversations become shared memory.</h1>
+      <p class="lede">Space brings your team's chat, meetings and calls together, then turns them into notes and pages everyone can edit, share and search.</p>
+      <a class="cta" href="mailto:hello@space.so">Get in touch</a>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Channels and messages</h3>
+        <p>Team channels, direct messages and threads, on iPhone and in the browser.</p>
+      </div>
+      <div class="card">
+        <h3>Meeting notes</h3>
+        <p>Record a meeting and get a transcript, summary and follow-ups you can edit.</p>
+      </div>
+      <div class="card">
+        <h3>Shared pages</h3>
+        <p>Write together in pages that live alongside the conversation they came from.</p>
+      </div>
+      <div class="card">
+        <h3>Your server, your data</h3>
+        <p>Run Space on your own Mac or Linux machine. Transcription happens locally.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="row">
+        <span>© 2026 Space Technologies Pte. Ltd. · Singapore</span>
+        <span class="links"><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a><a href="mailto:hello@space.so">hello@space.so</a></span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
