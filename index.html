@@ -16,8 +16,12 @@
       --line: #e6e2f3;
       --accent: #6d4aff;
       --accent-soft: #f0ecff;
-      --card: #ffffff;
+      --card: rgba(255, 255, 255, 0.76);
       --mark: #3a243b;
+      /* Veil over the beach scene so body text keeps its contrast (CLM-50).
+         Heaviest behind the headline, lighter over the sea and sand. */
+      --veil: linear-gradient(to bottom,
+        rgba(251, 250, 255, 0.88), rgba(251, 250, 255, 0.62) 46%, rgba(251, 250, 255, 0.44));
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -27,15 +31,22 @@
         --line: #2a2638;
         --accent: #9b85ff;
         --accent-soft: #211c33;
-        --card: #1a1724;
+        --card: rgba(26, 23, 36, 0.66);
         --mark: #eeeaf8;
+        --veil: linear-gradient(to bottom,
+          rgba(18, 16, 25, 0.90), rgba(18, 16, 25, 0.76) 46%, rgba(18, 16, 25, 0.62));
       }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
+      min-height: 100vh;
       color: var(--text);
+      background-color: var(--bg);
+      background-image: var(--veil), url("/beach.svg");
+      background-repeat: no-repeat, no-repeat;
+      background-position: center, center bottom;
+      background-size: cover, cover;
       font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
@@ -73,6 +84,7 @@
     }
     .card {
       background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px;
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
     }
     .card h3 { margin: 0 0 6px; font-size: 17px; }
     .card p { margin: 0; color: var(--muted); font-size: 15px; }
