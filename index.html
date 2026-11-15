@@ -50,6 +50,17 @@
       padding: 4px 10px; border-radius: 999px; margin-bottom: 20px;
     }
     h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 20px; }
+    /* Hovering the headline swaps "shared memory." for "decisions." (CLM-48). */
+    .swap { display: inline-grid; }
+    .swap > span { grid-area: 1 / 1; transition: opacity .22s ease, transform .22s ease; }
+    .swap .to { opacity: 0; transform: translateY(0.16em); }
+    @media (hover: hover) and (pointer: fine) {
+      h1:hover .swap .from { opacity: 0; transform: translateY(-0.16em); }
+      h1:hover .swap .to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .swap > span { transition: none; }
+    }
     .lede { font-size: 20px; color: var(--muted); max-width: 620px; margin: 0 0 32px; }
     .cta {
       display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
@@ -90,7 +101,7 @@
 
     <section class="hero">
       <div class="eyebrow">Coming soon to iPhone and the web</div>
-      <h1>Conversations become shared memory.</h1>
+      <h1>Conversations become <span class="swap"><span class="from">shared memory.</span><span class="to" aria-hidden="true">decisions.</span></span></h1>
       <p class="lede">Space brings your team's chat, meetings and calls together, then turns them into notes and pages everyone can edit, share and search.</p>
       <a class="cta" href="mailto:hello@space.so">Get in touch</a>
     </section>
